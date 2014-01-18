@@ -4,7 +4,7 @@ import pandas as pd
 
 def sortedcsv(file, key):
 
-    # Read in CSV data as list of dictionaries
+    # Read in CSV data using pandas
     data = pd.read_csv(file)
 
     # Convert date string to date object
