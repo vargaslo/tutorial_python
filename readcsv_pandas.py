@@ -2,7 +2,7 @@ import matplotlib.pyplot as plt
 import pandas as pd
 
 
-def sortedcsv(file, key):
+def sortedcsv(file, sortkey):
 
     # Read in CSV data using pandas
     data = pd.read_csv(file)
@@ -17,7 +17,7 @@ def sortedcsv(file, key):
         data['Transaction Type'] == 'credit', other=-amount)
 
     # Sort transaction according to key
-    data = data.sort([key])
+    data = data.sort([sortkey])
 
     return data
 
