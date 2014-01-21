@@ -8,7 +8,8 @@ def sortedcsv(file, key):
     data = pd.read_csv(file)
 
     # Convert date string to date object
-    data['Date'] = pd.to_datetime(data['Date'])
+    datekey = 'Date'
+    data[datekey] = pd.to_datetime(data[datekey])
 
     # Credit transaction are positive, Debit are negative
     amount = data['Amount']
@@ -22,6 +23,8 @@ def sortedcsv(file, key):
 
 
 out = sortedcsv('transactions.csv', 'Date')
+out.to_csv('trans_sorted.csv')
+
 x = out['Date']
 y = out['Amount']
 
